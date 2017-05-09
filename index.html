@@ -1,8 +1,72 @@
 <html>
-<header>
-    <title>Marco's Website</title>
-</header>
+    <head>
+        <title>Marco's Website</title>
+        <link href="https://fonts.googleapis.com/css?family=Anton|Cuprum|Gloria+Hallelujah|Indie+Flower|Inknut+Antiqua|Orbitron|Pacifico|Permanent+Marker|Roboto" rel="stylesheet">
+        <link href="style.css" rel="stylesheet"/>
+        <script src="fontface.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
     <body>
-        Work In Progress
+        <div class="container">
+            <div class="me">
+                <h1 id="salut">Hi, I'm Marco</h1>
+            </div>
+            <!--<div class="projects">
+                Hola
+            </div>-->
+        </div>
     </body>
+    <script>
+        const randoms = get_randoms();
+        function change_font(element, font) {
+            element.style.fontFamily = font;
+        }
+        function mod(x, y) {
+           return  ((x - y) * Math.floor(x / y))
+        }
+        function get_randoms() {
+            var randoms = [0,0,0];
+            var previous = -1;
+            return randoms.map(() => {
+                var random = Math.floor(Math.random() * 8);
+                while (random === previous) {
+                    random = Math.abs(mod(random + 1, 8))
+                }
+                previous = random;
+                return random
+            })
+        }
+        function animate(i) {
+            const element = document.getElementById("salut");
+            console.log(randoms[i-1])
+            setTimeout(() => {  
+                change_font(element, fonts[randoms[i-1]]);
+            }, 700*i)
+        }
+        function font_animation() {
+            for (var i = 1; i < 4; i++) {
+                animate(i);
+            }
+        }
+        const fonts = [
+            "Roboto",
+            "Inknut Antiqua",
+            "Indie Flower",
+            "Anton",
+            "Pacifico",
+            "Gloria Hallelujah",
+            "Cuprum",
+            "Orbitron",
+        ]
+        var promises = fonts.map((font) => {
+            return new FontFaceObserver(font).load();
+        })
+        Promise.all(promises)
+        .then(() => {
+            font_animation();
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    </script>
 </html>

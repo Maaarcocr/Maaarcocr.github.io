@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+.container {
+    min-height: 100%;
+}
+
+/*.projects {
+    background-color: white;
+}*/
+
+.me {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.me h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 60px;
+    display: flex;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .me h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .me .card {
+        width: 75vw;
+    }
+    .me img {
+        max-width: 60vw;
+        max-height: 60vw;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .me .card {
+        width: 85vw;
+    }
+    .me img {
+        max-width: 80vw;
+        max-height: 80vw;
+    }
+}*/
