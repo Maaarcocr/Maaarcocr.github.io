@@ -77,7 +77,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .title h1 {
@@ -86,8 +86,7 @@ body {
 }
 
 .title p {
-    font-weight: bold;
-    flex: 1;
+    flex: 4;
     font-size: 23px;
 }
 
@@ -123,11 +122,11 @@ body {
 }
 
 @media only screen and (max-width: 1100px) {
-    .title {
-        margin: 20px;
-    }
     .card {
         width: 90vw
+    }
+    .title p {
+        display: none;
     }
 }
 

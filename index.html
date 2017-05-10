@@ -88,6 +88,17 @@
                         </p>
                     </a>
                 </div>
+                <div class="card project_tile">
+                    <a href="https://github.com/Maaarcocr/slow" target="_blank" >
+                        <h1>uclapi-go <i class="fa fa-github" aria-hidden="true"></i></h1>
+                        <h3>A Go wrapper library for uclapi</h3>
+                        <p>Recently, thanks to the effort of some very API first students, UCL
+                            got a REST API for different services, such as room booking.
+                            I made a wrapper library in go to facilitate future applications
+                            that wants to use the API.
+                        </p>
+                    </a>
+                </div>
             </div>
         </div>
     </body>
@@ -122,7 +133,7 @@
             console.log(randoms[i-1])
             setTimeout(() => {  
                 change_font(element, fonts[randoms[i-1]]);
-            }, 850*i)
+            }, 825*i)
         }
         function font_animation() {
             for (var i = 1; i < 4; i++) {
@@ -148,7 +159,7 @@
             setTimeout(() => {
                 const element = document.getElementById("salut");
                 element.style.setProperty("--size", "100px");
-            }, 3100)
+            }, 3000)
         })
         .catch((error) => {
             console.log(error);
