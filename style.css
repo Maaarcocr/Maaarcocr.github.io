@@ -71,8 +71,24 @@ body {
 }
 
 .title {
-    margin: 20px 30vw;
-    width: 25vw;
+    width: 100vw;
+    background-color: #9BC1BC;
+    padding: 5px 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Amatic SC', cursive;
+}
+
+.title h1 {
+    flex: 5;
+    font-size: 40px;
+}
+
+.title p {
+    font-weight: bold;
+    flex: 1;
+    font-size: 23px;
 }
 
 .down {
@@ -103,9 +119,6 @@ body {
 @media only screen and (max-width: 1600px) {
     .card {
         width: 40vw
-    }
-    .project_tile {
-        min-height: 25vw;
     }
 }
 
