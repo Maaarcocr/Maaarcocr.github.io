@@ -1,6 +1,10 @@
 <html>
     <head>
         <title>Marco's Website</title>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Anton|Cuprum|Gloria+Hallelujah|Indie+Flower|Inknut+Antiqua|Orbitron|Pacifico|Permanent+Marker|Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
         <link href="style.css" rel="stylesheet"/>
@@ -18,17 +22,79 @@
                     <h3><a href="https://github.com/Maaarcocr" target="_blank">GitHub</a></h3>
                     <h3><a href="https://twitter.com/Maaarcocr" target="_blank">Twitter</a></h3>
                 </div> 
+                <a class="down" href="#projects"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </div>
             <div id="projects" class="projects">
-                <div class="card">
-                    <h1>nojson <a href="https://github.com/Maaarcocr/nojson" target="_blank" ><i class="fa fa-github" aria-hidden="true"></i></a> </h1>
-                    <h3>Filtering struct fields in Golang</h3>
-                    <p>While I was developing a REST API server I needed to hide some struct field values from the client if he was not allowed to see that part of the data. I was using an ORM library so I needed an easy way to create a filtered json response. </p>
+                <div class="card title">
+                    <h1>Projects</h1>
+                </div>
+                <div class="card project_tile">
+                    <a href="https://github.com/Maaarcocr/nojson" target="_blank" >
+                        <h1>nojson <i class="fa fa-github" aria-hidden="true"></i></h1>
+                        <h3>Filtering struct fields in Golang</h3>
+                        <p>While I was developing a REST API server I 
+                            needed to hide some struct field values from
+                            the client if he was not allowed to see that 
+                            part of the data. I was using an ORM library so
+                            I needed an easy way to create a filtered json
+                            response. </p>
+                    </a>
+                </div>
+                <div class="card project_tile">
+                    <a href="https://github.com/Maaarcocr/closestmatch-rs" target="_blank" >
+                        <h1>closestmatch-rs <i class="fa fa-github" aria-hidden="true"></i></h1>
+                        <h3>Words similarity in Rust</h3>
+                        <p>Let's say that you have a collections of words,
+                            call it a dictionary of known words, such as 
+                            ["hello","good","rust"]. You also have a word,
+                            such as "hllo" and you want to find the closest
+                            match from the dictionary. This is the main
+                            functionality of this library.</p>
+                    </a>
+                </div>
+                <div class="card project_tile">
+                    <a href="https://github.com/Maaarcocr/validator" target="_blank" >
+                        <h1>validator <i class="fa fa-github" aria-hidden="true"></i></h1>
+                        <h3>Checking the correctness of a propositional tableaux</h3>
+                        <p>This small utility just creates 10 random valid and not valid formula in propositional logic
+                            and then feed them to a formula prover (in my case it uses tableaux). I made it in 
+                            order to check the correctness of my coursework and then made it open source
+                            so that my collegues could benefit from it. 
+                        </p>
+                    </a>
+                </div>
+                <div class="card project_tile">
+                    <a href="https://github.com/Maaarcocr/slow" target="_blank" >
+                        <h1>slow <i class="fa fa-github" aria-hidden="true"></i></h1>
+                        <h3>A not very well done HTTP library in Rust</h3>
+                        <p>I have created this library because I wanted to learn how an HTTP 
+                            server works and how people make new ones. I have not created 
+                            this with the aim of substituting Hyper or any other Rust HTTP 
+                            library. It's mainly an educational project. 
+                        </p>
+                    </a>
+                </div>
+                <div class="card project_tile">
+                    <a href="https://github.com/Maaarcocr/slow" target="_blank" >
+                        <h1>SEAT <i class="fa fa-github" aria-hidden="true"></i></h1>
+                        <h3>A modern teaching tool for Computer Science courses</h3>
+                        <p>During my second year at UCL I have been working with
+                            two of my collegues, Janos and Marti, on SEAT. It's a system, 
+                            that includes a Visual Studio Extension, whose aim is to simplify
+                            how programming exercises are done in University. Our project
+                            was good enough that we have been selected for the World Finals for the
+                            Imagine Cup in 2017!
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
     </body>
     <script>
+        $('a[href*=\\#]').on('click', function(event){     
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+        });
         const randoms = get_randoms();
         function change_font(element, font) {
             element.style.setProperty("--f", font);

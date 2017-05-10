@@ -12,6 +12,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-color: #2B2D42;
 }
 
@@ -57,11 +59,32 @@ body {
     padding-bottom: 50px;
 }
 
-.card {
-    transition: box-shadow .5s ease;
+.project_tile {
+    margin: 20px;
     width: 25vw;
     min-height: 20vw;
-    margin: 20px;
+}
+
+.project_tile a {
+    color: black;
+    text-decoration: none;
+}
+
+.title {
+    margin: 20px 30vw;
+    width: 25vw;
+}
+
+.down {
+    color: black;
+    text-decoration: none;
+    font-size: 40px !important;
+    position: absolute;
+    bottom: 10px;
+}
+
+.card {
+    transition: box-shadow .5s ease;
     padding: 20px;
     background-color: white;
     box-shadow: 6px 6px 10px #010101;
@@ -77,19 +100,19 @@ body {
     box-shadow: 9px 9px 10px #010101;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1600px) {
     .card {
-        width: 50vw
+        width: 40vw
+    }
+    .project_tile {
+        min-height: 25vw;
     }
 }
 
-@media only screen and (max-width: 700px) {
-    .card {
-        width: 70vw
+@media only screen and (max-width: 1100px) {
+    .title {
+        margin: 20px;
     }
-}
-
-@media only screen and (max-width: 500px) {
     .card {
         width: 90vw
     }
