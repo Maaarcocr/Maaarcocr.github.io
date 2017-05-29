@@ -17,6 +17,16 @@ body {
     background-color: #2B2D42;
 }
 
+.contributions {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #2A3D3F;
+}
+
 .links {
     display: flex;
     justify-content: center;
@@ -65,6 +75,10 @@ body {
     min-height: 20vw;
 }
 
+.contrib {
+    min-height: 10vw;
+}
+
 .project_tile a {
     color: black;
     text-decoration: none;
@@ -88,6 +102,7 @@ body {
 .title p {
     flex: 4;
     font-size: 23px;
+    text-align: right;
 }
 
 .down {
@@ -139,6 +154,20 @@ body {
 .card h1 a {
     color: black;
     text-decoration: none; 
+}
+
+.contrib {
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contrib img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
 }
 
 /*@media only screen and (max-width: 650px) {
